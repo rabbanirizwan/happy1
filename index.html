@@ -9,14 +9,79 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
+  <style>
+  #map {
+        display: none;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      #right-panel {
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        right: 5px;
+        top: 60%;
+        margin-top: -195px;
+        height: 330px;
+        width: 200px;
+        padding: 5px;
+        z-index: 5;
+        border: 1px solid #999;
+        background: #fff;
+      }
+      h2 {
+        font-size: 22px;
+        margin: 0 0 5px 0;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 271px;
+        width: 200px;
+        overflow-y: scroll;
+      }
+      li {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      li:nth-child(odd) {
+        background-color: #fcfcfc;
+      }
+      #more {
+        width: 100%;
+        margin: 5px 0 0 0;
+      }
+    </style>
 </head>
    
-  </head>
-  <body>
  
-      <!--<ul id="places"></ul>-->
-      
-    <header>
+  <body>
+  
+      <header>
     
         <div class="first-nav"> 
                <p><i class="far fa-star"></i></p> 
@@ -28,12 +93,12 @@
 
        <div class="second-nav sticky-top">
            
-          <p id = "one" >  <a  onclick="food1()" href="#food">Food</a> </p>
-           <p id = "two"> <a href="#Drinks" onclick="food2()">Drinks</a></p>
-           <p id = "three"> <a  href="#Activities" onclick="food3()">Activities</a></p>
-           <p id = "four"> <a  href="#Beauty" onclick="food4()">Beauty & Spas</a></p>
-           <p id = "five"> <a  href="#Shop" onclick="food5()">Shop</a></p>
-           <p id = "six"> <a  href="#travel" onclick="food6()">Travel</a> </p>
+          <p id = "one" style=" font-family: arial;" >  <a  onclick="food1()" href="#food">Food</a> </p>
+           <p id = "two" style=" font-family: arial;"> <a href="#Drinks" onclick="food2()">Drinks</a></p>
+           <p id = "three" style=" font-family: arial;"> <a  href="#Activities" onclick="food3()">Activities</a></p>
+           <p id = "four" style=" font-family: arial;"> <a  href="#Beauty" onclick="food4()">Beauty & Spas</a></p>
+           <p id = "five" style=" font-family: arial;"> <a  href="#Shop" onclick="food5()">Shop</a></p>
+           <p id = "six" style=" font-family: arial;">  <a  href="#travel" onclick="food6()">Travel</a> </p>
 
        </div>
        <div id="pac-container">
@@ -41,38 +106,165 @@
             placeholder="Enter a location">
       </div>
    
-       <div id="map"></div>
+      
     <section id="places"> 
    
     </section>
+    <div class="search">
+       <label for="exampleInputEmail1"></label>
+  <div class="input-group mb-3">
+  <select class="custom-select" id="inputGroupSelect02">
+   
+    <!--<option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>-->
+  </select>
+  <div class="input-group-append">
+    <label class="input-group-text" for="inputGroupSelect02">Options</label>
+  </div>
+</div>
+
+
+ <label for="exampleInputEmail1"></label>
+  <div class="input-group mb-3">
+  <select class="custom-select" id="inputGroupSelect01">
+   
+    <!--<option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>-->
+  </select>
+  <div class="input-group-append">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+ 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">   <div class="alert alert-danger" role="alert">
+  show Details containing
+</div></h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+ 
+    <div class="col-sm-10">
+      <div class="form-check">
+            <p>restaurant</p>
+       <p> <input class="form-check-input" type="checkbox" id="gridCheck1"></p>
+       
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+   
+    <div class="col-sm-10">
+      <div class="form-check">
+   <p> <label>Drinks</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck2"></p>
+        
+      </div>
+    </div>
+  </div>
+<div class="form-group row">
+   
+    <div class="col-sm-10">
+      <div class="form-check">
+   <p> <label>Activity</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck3"></p>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+   
+    <div class="col-sm-10">
+      <div class="form-check">
+   <p> <label>shop</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck4"></p>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+   
+    <div class="col-sm-10">
+      <div class="form-check">
+   <p> <label>travel</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck5"></p>
+        
+      </div>
+    </div>
+  </div>
+  
+<div class="form-group row">
+   
+    <div class="col-sm-10">
+      <div class="form-check">
+   <p> <label>Beauty & Spa</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck6"></p>
+        
+      </div>
+    </div>
+  </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="ShowAll()" class="btn btn-warning btn-lg" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    <div id="map"></div>
     <footer class="sticky-bottom">
     
     <div>
           <a onclick="near()">  <p><i class="fas fa-plus"></i></p>
-            <p>Near me</p></a>
+            <p style=" font-family: arial;">Near me</p></a>
     
     </div>
     <div>
-            <p><i class="fas fa-map-pin"></i></p>
-            <p>Map</p>
+           <a onclick="mapShow()" ><p><i class="fas fa-map-pin"></i></p>
+            <p style=" font-family: arial;">Map</p></a>
            
     </div>
     <div>
-           <a href="search.html"> <p><i class="fas fa-search"></i></p>
-            <p>Search</p></a>
+           <a onclick="joe()" ><p><i class="fas fa-map-pin"></i></p>
+            <p style=" font-family: arial;">Map</p></a>
+           
            
     </div>   
     <div>
             <p><i class="fas fa-location-arrow"></i></p>
-            <p>locations</p>
+            <p style=" font-family: arial;"> locations</p>
         
     </div>
     <div>
           <a onclick="fav()"> <p><i class="far fa-heart"></i></p>
-              <p>favourite</p></a>
+              <p style=" font-family: arial;">favourite</p></a>
     </div>   
         
 </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -127,6 +319,12 @@
 //     }
 //   }
 // }
+
+    var map;
+var service;
+var infowindow;
+var latitude,longitude;
+ // var getNextPage = null;
 function initMap() {
      //navigator.geolocation.getCurrentPosition(success);
   //function success(position)
@@ -170,26 +368,30 @@ var pyrmont = new google.maps.LatLng(latitude,longitude);
         });
 
 
-  var request = {
-    location: pyrmont,
-    radius: '500',
-    type: ['restaurant']
-  };
+  // var request = {
+  //   location: pyrmont,
+  //   radius: '500',
+  //   type: ['restaurant']
+  // };
 
+   
   service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
+  //service.nearbySearch(request, callback);
 
  //}
  
   
 }
 
-function callback(results, status) {
+function callback(results, status,pagination) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
       
       createMarker(results[i]);
+         //getNextPage = pagination.hasNextPage && function() {
+               // pagination.nextPage();
+             // };
      // createPhoto(place);
     }
   }
@@ -211,7 +413,7 @@ function createMarker(place) {
   if (!photos) {
      return;
   }
-
+console.log("first"+tab);
 if(tab == 1)
 {
    console.log(tab);
@@ -250,6 +452,67 @@ if(tab == 2)
         
         `;
  
+}
+
+if(tab == 3){
+  console.log(tab);
+  document.getElementById("map").style.height = "100%";
+   document.getElementById("map").style.display = "block";
+  // document.querySelector(".first-nav").style.display="none";
+  //    document.querySelector(".second-nav").style.display="none";
+     document.querySelector("#pac-container").style.display="none";
+    //  document.querySelector(".sticky-bottom").style.display="none";
+      document.querySelector("header").style.display="none";
+ var myLatLng = {lat: place.geometry.location.lat(), lng:place.geometry.location.lng()};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 20,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+  
+}
+
+if (tab == 4)
+{
+  console.log(tab);
+ 
+
+  document.querySelector(".search").style.display="block";
+ var b= document.querySelector("#inputGroupSelect02").value=`${place.name}`;
+
+document.querySelector("#inputGroupSelect02").innerHTML+=`<option value=${place.name}>${place.name}</option>`;
+ 
+
+ 
+
+
+}
+if(tab == 9)
+{
+  console.log(tab);
+  console.log(place.name);
+   latitude=place.geometry.location.lat();
+  longitude=place.geometry.location.lng();
+  console.log(latitude+" "+longitude);
+  document.querySelector(".search").style.display = "none";
+ document.querySelector("#places").innerHTML+=`<div class="first-place">
+        <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
+        <div class="inner-style">
+            <p class="foodway"> ${place.name} <br><small>${place.rating}</small></p>
+            <div class="inner-style1">
+                  <p style="min-width:40px;max-width:100px;"><i class="fas fa-map-marker-alt"></i>
+                      ${place.vicinity}</p>
+                  
+            </div>
+          
+            </div>
+          </div>`;
 }
 
       }

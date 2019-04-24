@@ -1,15 +1,54 @@
  
  
- var map;
-var service;
-var infowindow;
-var latitude,longitude;
+//  var map;
+// var service;
+// var infowindow;
+// var latitude,longitude;
 
 var tab;
 
+var food,drink,activity,beauty,shop,travel;
+
+function ShowAll(){
+  console.log("show");
+document.getElementById("places").innerHTML="";
+document.getElementById("map").style.display ="none";
+
+var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
+
+
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['restaurant']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+    var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['store']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
+
+  tab =9;
+ 
+ 
+}
 
 function near(){
 document.getElementById("places").innerHTML="";
+document.getElementById("map").style.display ="none";
 
 var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
@@ -35,7 +74,7 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
   
 }
 function fav(){
-  document.getElementById("places").innerHTML="";
+  document.getElementById("places").innerHTML=" ";
 var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -58,6 +97,75 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
   //console.log("call hua"+tab);
   
 } 
+
+function mapShow(){
+document.getElementById("places").innerHTML=" ";
+
+var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
+
+
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['restaurant']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+
+
+  tab =3;
+  
+}
+
+function joe(){
+document.getElementById("places").innerHTML=" ";
+var i=0;
+daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  //console.log(tab);
+  //console.log("new"+place.geometry.location.lat());
+var dt = new Date("December 25, 1995 23:15:00");
+ dt.getDay();
+var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
+
+
+
+  var request = {
+    location: pyrmont,
+    radius: '5000',
+    type: ['neighborhood']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+
+
+  tab =4;
+  console.log("call");
+  document.querySelector("#inputGroupSelect01").value=`${daysInWeek[i]}`;
+for(i;i<6;i++)
+{
+   document.querySelector("#inputGroupSelect01").innerHTML+=`<option value=${daysInWeek[i]}>${daysInWeek[i]}</option>`;
+ 
+}
+ 
+
+  
+}
+
 
 
 function food1() {
@@ -103,7 +211,7 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 }
 
 function food2() {
-   // document.getElementById("places").innerHTML = "";
+    document.getElementById("places").innerHTML = "";
 console.log(Number(localStorage.getItem("latitude")));
 
     var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
@@ -285,7 +393,7 @@ function food6() {
   var request = {
     location: pyrmont,
     radius: '500',
-    type: ['mosque']
+    type: ['subway_station']
   };
 
   service = new google.maps.places.PlacesService(map);

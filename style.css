@@ -1,3 +1,26 @@
+.form-group{
+    margin-bottom: 0px;
+}
+.form-check{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.modal-title{
+    width: 100%;
+}
+.alert{
+    margin: 0px;
+}
+.modal-header{
+padding: 0px;
+}
+.modal-content{
+    top: 200px;
+}
+.search{
+    display: none;
+}
 #pac-input{
     display: flex;
     justify-content: center;
