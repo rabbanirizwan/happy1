@@ -85,7 +85,7 @@
     
         <div class="first-nav"> 
                <p><i class="far fa-star"></i></p> 
-            <p> HappyHour</p> 
+            <p style=" font-family: arial;"> HappyHour</p> 
             <p><i class="fas fa-info-circle"></i></p>
        </div>
         
@@ -101,23 +101,11 @@
            <p id = "six" style=" font-family: arial;">  <a  href="#travel" onclick="food6()">Travel</a> </p>
 
        </div>
-       <div id="pac-container">
-        <input id="pac-input" type="text"
-            placeholder="Enter a location">
-      </div>
-   
-      
-    <section id="places"> 
-   
-    </section>
-    <div class="search">
+
+           <div class="search">
        <label for="exampleInputEmail1"></label>
   <div class="input-group mb-3">
   <select class="custom-select" id="inputGroupSelect02">
-   
-    <!--<option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>-->
   </select>
   <div class="input-group-append">
     <label class="input-group-text" for="inputGroupSelect02">Options</label>
@@ -128,10 +116,6 @@
  <label for="exampleInputEmail1"></label>
   <div class="input-group mb-3">
   <select class="custom-select" id="inputGroupSelect01">
-   
-    <!--<option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>-->
   </select>
   <div class="input-group-append">
     <label class="input-group-text" for="inputGroupSelect01">Options</label>
@@ -142,7 +126,7 @@
 <div class="container">
   
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  <button type="button" class="btn btn-warning btn-lg"  style="width:100%;" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -234,33 +218,58 @@
 </div>
     </div>
 
+       <div id="pac-container">
+
+<div class="form-group">
+    
+    <input type="text" class="form-control" id="pac-input" aria-describedby="emailHelp" placeholder="Enter a location">
+    
+  </div>
+
+
+
+        
+      </div>
+       <div class="searchByName">
+      <div class="form-group">
+   
+    
+<input type="text" id="myInput" class ="form-control" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" value="">
+  </div>
+    </div>
+      
+    <section id="places"> 
+   
+    </section>
+
+
     <div id="map"></div>
     <footer class="sticky-bottom">
     
     <div>
-          <a onclick="near()">  <p><i class="fas fa-plus"></i></p>
-            <p style=" font-family: arial;">Near me</p></a>
+          <a class="newone" onclick="near()">  <p><i class="fas fa-plus"></i></p>
+            <p class="newone" style=" font-family: arial;">Near me</p></a>
     
     </div>
     <div>
-           <a onclick="mapShow()" ><p><i class="fas fa-map-pin"></i></p>
-            <p style=" font-family: arial;">Map</p></a>
+           <a class="new2" onclick="mapShow()" ><p><i class="fas fa-map-marker"></i></p>
+            <p  class="new2" style=" font-family: arial;">Map</p></a>
            
     </div>
     <div>
-           <a onclick="joe()" ><p><i class="fas fa-map-pin"></i></p>
-            <p style=" font-family: arial;">Map</p></a>
+           <a  class="new3"  onclick="joe()" ><p><i class="fas fa-map-pin"></i></p>
+            <p  class="new3" style=" font-family: arial;">Search</p></a>
            
            
     </div>   
     <div>
-            <p><i class="fas fa-location-arrow"></i></p>
-            <p style=" font-family: arial;"> locations</p>
+          <a  class="new4" onclick="locations()">  <p><i class="fas fa-location-arrow"></i></p>
+            <p class="new4" style=" font-family: arial;"> locations</p></a>
         
     </div>
     <div>
-          <a onclick="fav()"> <p><i class="far fa-heart"></i></p>
-              <p style=" font-family: arial;">favourite</p></a>
+          <a class="new5" onclick="fav()"> <p><i class="far fa-heart"></i></p>
+              <p  class="new5" style=" font-family: arial;">favourite</p></a>
     </div>   
         
 </footer>
@@ -416,6 +425,8 @@ function createMarker(place) {
 console.log("first"+tab);
 if(tab == 1)
 {
+  document.querySelector(".searchByName").style.display="none";
+   document.querySelector("#pac-container").style.display = "none";
    console.log(tab);
    document.getElementById("places").innerHTML+=  `<div class="first-place">
         <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
@@ -435,6 +446,8 @@ if(tab == 1)
 }
 if(tab == 2)
 {
+  document.querySelector(".searchByName").style.display="none";
+  document.querySelector("#pac-container").style.display = "none";
    console.log(tab);
    document.getElementById("places").innerHTML+=  `<div class="alert alert-warning" role="alert">
   ${place.name}
@@ -455,6 +468,8 @@ if(tab == 2)
 }
 
 if(tab == 3){
+document.querySelector(".searchByName").style.display="none";
+  document.querySelector("#pac-container").style.display = "none";
   console.log(tab);
   document.getElementById("map").style.height = "100%";
    document.getElementById("map").style.display = "block";
@@ -480,8 +495,13 @@ if(tab == 3){
 
 if (tab == 4)
 {
+  document.querySelector(".searchByName").style.display="none";
+  document.querySelector("#pac-container").style.display = "none";
   console.log(tab);
- 
+   document.querySelector("#pac-container").style.padding = "0px";
+    document.querySelector("#pac-container").style.backgroundColor = "white-space";
+ document.getElementById("map").style.display = "block";
+   document.querySelector("#pac-input").style.display = "none";
 
   document.querySelector(".search").style.display="block";
  var b= document.querySelector("#inputGroupSelect02").value=`${place.name}`;
@@ -495,6 +515,8 @@ document.querySelector("#inputGroupSelect02").innerHTML+=`<option value=${place.
 }
 if(tab == 9)
 {
+  document.querySelector(".searchByName").style.display="none";
+  document.querySelector("#pac-container").style.display = "none";
   console.log(tab);
   console.log(place.name);
    latitude=place.geometry.location.lat();
@@ -513,6 +535,21 @@ if(tab == 9)
           
             </div>
           </div>`;
+}
+
+
+if (tab ==7)
+{
+  document.querySelector("#pac-container").style.display = "none";
+  document.querySelector(".search").style.display="none";
+  document.querySelector("#pac-input").style.display = "none";
+  document.querySelector(".searchByName").style.display="block";
+  document.querySelector("#places").innerHTML+=`
+  <p style="border-bottom: 1px solid gray;"><a value=${place.name}>${place.name}</a></p>
+  
+        `;
+        // document.querySelector("#myInput").value=`${place.name}`;
+
 }
 
       }

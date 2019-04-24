@@ -1,3 +1,23 @@
+.alert-warning{
+    background-color: #f38400;
+    color: black;
+    font-family: sans-serif;
+    
+}
+#pac-container{
+    padding: 80px;
+     background-color:#f38400;
+     height: 100%;
+}
+.searchByName{
+    display: none;
+    height: 72px;
+    
+    background-color:#f38400;
+    padding-top: 16px;
+    padding-left: 82px;
+    padding-right: 82px;
+}
 .form-group{
     margin-bottom: 0px;
 }
@@ -20,6 +40,8 @@ padding: 0px;
 }
 .search{
     display: none;
+        padding: 235px 47px 150px 47px;
+}
 }
 #pac-input{
     display: flex;

@@ -7,11 +7,26 @@
 
 var tab;
 
-var food,drink,activity,beauty,shop,travel;
-
-function ShowAll(){
-  console.log("show");
-document.getElementById("places").innerHTML="";
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("places");
+    li = ul.getElementsByTagName("p");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function locations()
+{
+  tab=7;
+  document.getElementById("places").innerHTML="";
 document.getElementById("map").style.display ="none";
 
 var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
@@ -31,7 +46,89 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
-    var request = {
+  if(window.latitude >= 0)
+{
+   console.log("window"+window.latitude);
+   document.querySelector(".newone > p").style.color="black";
+   document.querySelector(".newone").style.color="black";
+   document.querySelector(".new4 > p").style.color="#f38400";
+   document.querySelector(".new4").style.color="#f38400";
+   document.querySelector(".new3 > p").style.color="black";
+   document.querySelector(".new3").style.color="black";
+   document.querySelector(".new2 > p").style.color="black";
+   document.querySelector(".new2").style.color="black";
+   document.querySelector(".new5 > p").style.color="black";
+   document.querySelector(".new5").style.color="black";
+   
+   
+   
+   // document.querySelector(".fa-plus > p").style.color="red";
+
+}
+
+
+}
+function ShowAll(){
+  console.log("show");
+document.getElementById("places").innerHTML="";
+document.getElementById("map").style.display ="none";
+console.log("lat"+window.latitude);
+var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
+
+if(document.querySelector("#gridCheck1").checked == true)
+{
+  console.log("chec1");
+var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['restaurant']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
+}
+if(document.querySelector("#gridCheck2").checked == true)
+{
+
+  console.log("chec2");
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['bar']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
+}
+
+if(document.querySelector("#gridCheck3").checked == true)
+{
+
+  console.log("chec2");
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
+}
+
+  
+  if(document.querySelector("#gridCheck4").checked == true)
+{
+
+  console.log("chec2");
+  var request = {
     location: pyrmont,
     radius: '1000',
     type: ['store']
@@ -39,6 +136,43 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
 service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+  
+}
+
+  
+  if(document.querySelector("#gridCheck5").checked == true)
+{
+
+  console.log("chec2");
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['amusement_park']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
+}
+
+  
+  if(document.querySelector("#gridCheck6").checked == true)
+{
+
+  console.log("chec2");
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['beauty_salon']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
+}
+
+  
+
   
 
   tab =9;
@@ -71,7 +205,26 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
 
   tab =1;
-  
+if(window.latitude >= 0)
+{
+   console.log("window"+window.latitude);
+   document.querySelector(".newone > p").style.color="#f38400";
+   document.querySelector(".newone").style.color="#f38400";
+   document.querySelector(".new2 > p").style.color="black";
+   document.querySelector(".new2").style.color="black";
+   document.querySelector(".new3 > p").style.color="black";
+   document.querySelector(".new3").style.color="black";
+   document.querySelector(".new4 > p").style.color="black";
+   document.querySelector(".new4").style.color="black";
+   document.querySelector(".new5 > p").style.color="black";
+   document.querySelector(".new5").style.color="black";
+   
+   
+   
+   // document.querySelector(".fa-plus > p").style.color="red";
+
+}
+   
 }
 function fav(){
   document.getElementById("places").innerHTML=" ";
@@ -95,6 +248,26 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
   tab=2;
   //console.log("call hua"+tab);
+
+  if(window.latitude >= 0)
+{
+   console.log("window"+window.latitude);
+   document.querySelector(".newone > p").style.color="black";
+   document.querySelector(".newone").style.color="black";
+   document.querySelector(".new2 > p").style.color="black";
+   document.querySelector(".new2").style.color="black";
+   document.querySelector(".new3 > p").style.color="black";
+   document.querySelector(".new3").style.color="black";
+   document.querySelector(".new4 > p").style.color="black";
+   document.querySelector(".new4").style.color="black";
+   document.querySelector(".new5 > p").style.color="#f38400";
+   document.querySelector(".new5").style.color="#f38400";
+   
+   
+   
+   // document.querySelector(".fa-plus > p").style.color="red";
+
+}
   
 } 
 
@@ -122,6 +295,26 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
 
   tab =3;
+
+   if(window.latitude >= 0)
+{
+   console.log("window"+window.latitude);
+   document.querySelector(".newone > p").style.color="black";
+   document.querySelector(".newone").style.color="black";
+   document.querySelector(".new2 > p").style.color="#f38400";
+   document.querySelector(".new2").style.color="#f38400";
+   document.querySelector(".new3 > p").style.color="black";
+   document.querySelector(".new3").style.color="black";
+   document.querySelector(".new4 > p").style.color="black";
+   document.querySelector(".new4").style.color="black";
+   document.querySelector(".new5 > p").style.color="black";
+   document.querySelector(".new5").style.color="black";
+   
+   
+   
+   // document.querySelector(".fa-plus > p").style.color="red";
+
+}
   
 }
 
@@ -162,6 +355,25 @@ for(i;i<6;i++)
  
 }
  
+ if(window.latitude >= 0)
+{
+   console.log("window"+window.latitude);
+   document.querySelector(".newone > p").style.color="black";
+   document.querySelector(".newone").style.color="black";
+   document.querySelector(".new3 > p").style.color="#f38400";
+   document.querySelector(".new3").style.color="#f38400";
+   document.querySelector(".new2 > p").style.color="black";
+   document.querySelector(".new2").style.color="black";
+   document.querySelector(".new4 > p").style.color="black";
+   document.querySelector(".new4").style.color="black";
+   document.querySelector(".new5 > p").style.color="black";
+   document.querySelector(".new5").style.color="black";
+   
+   
+   
+   // document.querySelector(".fa-plus > p").style.color="red";
+
+}
 
   
 }
