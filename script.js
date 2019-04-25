@@ -115,7 +115,24 @@ if(document.querySelector("#gridCheck3").checked == true)
   var request = {
     location: pyrmont,
     radius: '1000',
-    type: ['']
+    type: ['rv_park']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['park']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+   var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['zoo']
   };
 
 service = new google.maps.places.PlacesService(map);
@@ -131,13 +148,34 @@ service = new google.maps.places.PlacesService(map);
   var request = {
     location: pyrmont,
     radius: '1000',
+    type: ['shopping_mall']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+
+   var request = {
+    location: pyrmont,
+    radius: '1000',
     type: ['store']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['electronics_store']
   };
 
 service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
   
 }
+
+
 
   
   if(document.querySelector("#gridCheck5").checked == true)
@@ -152,8 +190,21 @@ service = new google.maps.places.PlacesService(map);
 
 service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['airport']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
   
 }
+
+
 
   
   if(document.querySelector("#gridCheck6").checked == true)
@@ -168,6 +219,16 @@ service = new google.maps.places.PlacesService(map);
 
 service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['spa']
+  };
+
+service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  
   
 }
 
@@ -444,6 +505,16 @@ console.log(Number(localStorage.getItem("latitude")));
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['cafe']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
     
     console.log("chla2");
      document.querySelector(".second-nav #one a").style.color="black";
@@ -539,6 +610,15 @@ function food4() {
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+
+   var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['spa']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
     
     console.log("chla4");
     document.querySelector(".second-nav #one a").style.color="black";
@@ -576,6 +656,23 @@ function food5() {
     location: pyrmont,
     radius: '1000',
     type: ['shopping_mall']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['home_goods_store']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['furniture_store']
   };
 
   service = new google.maps.places.PlacesService(map);
@@ -621,7 +718,24 @@ function food6() {
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+
+  var request = {
+    location: pyrmont,
+    radius: '500',
+    type: ['travel_agency']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
     
+    var request = {
+    location: pyrmont,
+    radius: '500',
+    type: ['airport']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
 
     console.log("chla6");
     document.querySelector(".second-nav #one a").style.color="black";
