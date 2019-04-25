@@ -1,4 +1,4 @@
- 
+
  
 //  var map;
 // var service;
@@ -295,6 +295,7 @@ var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
 
   tab =3;
+  
 
    if(window.latitude >= 0)
 {
@@ -465,26 +466,36 @@ console.log(Number(localStorage.getItem("latitude")));
 }
 
 function food3() {
+console.log("food3");
+   document.getElementById("places").innerHTML = "";
+console.log(Number(localStorage.getItem("latitude")));
 
-//     document.getElementById("places").innerHTML = " ";
+    var pyrmont = new google.maps.LatLng(window.latitude,window.longitude);
 
-//     var pyrmont = new google.maps.LatLng(localStorage.getItem("latitude"),localStorage.getItem("longitude"));
-
-//   map = new google.maps.Map(document.getElementById('map'), {
-//       center: pyrmont,
-//       zoom: 15
-//     });
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
 
 
 
-//   var request = {
-//     location: pyrmont,
-//     radius: '500',
-//     type: ['mosque']
-//   };
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['park']
+  };
 
-//   service = new google.maps.places.PlacesService(map);
-//   service.nearbySearch(request, callback);
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+    
+  var request = {
+    location: pyrmont,
+    radius: '1000',
+    type: ['rv_park']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
     
     console.log("chla3");
     document.querySelector(".second-nav #one a").style.color="black";
@@ -662,11 +673,11 @@ function createMarker(place) {
         document.getElementById("places").innerHTML+=  `<div class="first-place">
         <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
         <div class="inner-style">
-            <p class="foodway"> ${place.name} <br><small>${place.rating}</small></p>
+            <p class="foodway" style="max-width:150px;"> ${place.name} <br><small>${place.rating}</small></p>
             <div class="inner-style1">
                   <p><i class="fas fa-map-marker-alt"></i>
                       ${place.vicinity}</p>
-                  <p style="color:#ed8707; padding-left: 27px;">Next deal 3pm to 7pm </p>
+                  <p style="color:#ed8707; padding-left: 27px;"></p>
             </div>
           
             </div>

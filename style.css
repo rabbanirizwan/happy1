@@ -1,14 +1,28 @@
+.myclass{
+    font-size: 20px;
+    font-family: serif;
+    text-transform: uppercase;
+    font-style: oblique;
+    font-weight: 700;
+}
 .alert-warning{
     background-color: #f38400;
     color: black;
     font-family: sans-serif;
+  
     
 }
 #pac-container{
-    padding: 80px;
-     background-color:#f38400;
+    padding: 200px 80px 80px 80px;
      height: 100%;
+   background-color: orangered;
+    
+     
 }
+
+   
+
+
 .searchByName{
     display: none;
     height: 72px;

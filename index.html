@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
@@ -126,7 +127,7 @@
 <div class="container">
   
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-warning btn-lg"  style="width:100%;" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  <button type="button" class="btn btn-warning btn-lg"  style="width:100%;" data-toggle="modal" data-target="#myModal"> Open Surprise</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -136,79 +137,95 @@
       <div class="modal-content">
         <div class="modal-header">
          
-          <h4 class="modal-title">   <div class="alert alert-danger" role="alert">
+          <h4 class="modal-title">   <div class="alert alert-danger" role="alert" style="color: black;
+    font-style: oblique;
+    background-color: orange;">
   show Details containing
 </div></h4>
         </div>
         <div class="modal-body">
-          <div class="form-group row">
+          <div class="form-group row" style="border-bottom:2px solid #f38400;">
  
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="form-check">
-            <p>restaurant</p>
-       <p> <input class="form-check-input" type="checkbox" id="gridCheck1"></p>
+            <p class="myclass">restaurant</p>
+       <p> <input class="form-check-input" type="checkbox" id="gridCheck1" style="height: 21px;
+    width: 20px;"></p>
        
       </div>
     </div>
   </div>
-  <div class="form-group row">
+  <div class="form-group row" style="border-bottom:2px solid #f38400;">
    
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="form-check">
-   <p> <label>Drinks</label></p>
-     <p>   <input class="form-check-input" type="checkbox" id="gridCheck2"></p>
+   <p class="myclass"> Drinks</p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck2" style="height: 21px;
+    width: 20px;"></p>
         
       </div>
     </div>
   </div>
-<div class="form-group row">
+<div class="form-group row" style="border-bottom:2px solid #f38400;">
    
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="form-check">
-   <p> <label>Activity</label></p>
-     <p>   <input class="form-check-input" type="checkbox" id="gridCheck3"></p>
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="form-group row">
-   
-    <div class="col-sm-10">
-      <div class="form-check">
-   <p> <label>shop</label></p>
-     <p>   <input class="form-check-input" type="checkbox" id="gridCheck4"></p>
+   <p class="myclass"> <label>Activity</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck3" style="height: 21px;
+    width: 20px;"></p>
         
       </div>
     </div>
   </div>
   
-  <div class="form-group row">
+  <div class="form-group row" style="border-bottom:2px solid #f38400;">
    
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="form-check">
-   <p> <label>travel</label></p>
-     <p>   <input class="form-check-input" type="checkbox" id="gridCheck5"></p>
+   <p class="myclass"> <label>shop</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck4" style="height: 21px;
+    width: 20px;"></p>
         
       </div>
     </div>
   </div>
   
-<div class="form-group row">
+  <div class="form-group row" style="border-bottom:2px solid #f38400;">
    
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="form-check">
-   <p> <label>Beauty & Spa</label></p>
-     <p>   <input class="form-check-input" type="checkbox" id="gridCheck6"></p>
+   <p class="myclass"> <label>travel</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck5" style="height: 21px;
+    width: 20px;"></p>
+        
+      </div>
+    </div>
+  </div>
+  
+<div class="form-group row" style="border-bottom:2px solid #f38400;">
+   
+    <div class="col-sm-12">
+      <div class="form-check">
+   <p class="myclass">  <label>Beauty & Spa</label></p>
+     <p>   <input class="form-check-input" type="checkbox" id="gridCheck6" style="height: 21px;
+    width: 20px;"></p>
         
       </div>
     </div>
   </div>
 
         </div>
-        <div class="modal-footer">
-          <button type="button" onclick="ShowAll()" class="btn btn-warning btn-lg" data-dismiss="modal">Submit</button>
-          <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">cancel</button>
+        <div class="modal-footer" style="
+    justify-content: center;
+    background-color: orange;
+    justify-content:center;
+">
+          <button type="button" onclick="ShowAll()" class="btn btn-warning btn-lg" data-dismiss="modal" style="background-color: whitesmoke;
+    font-style: oblique;
+    font-weight: 700;">Submit</button>
+          <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal" style="background-color: whitesmoke;
+    font-style: oblique;
+    font-weight: 700;">cancel</button>
         </div>
       </div>
       
@@ -225,9 +242,14 @@
     <input type="text" class="form-control" id="pac-input" aria-describedby="emailHelp" placeholder="Enter a location">
     
   </div>
+<p style="
+    text-align: center;
+    padding-top: 13px;
+">
 
-
-
+    <i style="    font-size: 70px;
+    color: whitesmoke;" class="fas fa-angle-double-up animated infinite fadeInUp delay-2s"></i>
+</p>
         
       </div>
        <div class="searchByName">
@@ -350,6 +372,8 @@ var pyrmont = new google.maps.LatLng(latitude,longitude);
 
 
 
+
+
 //console.log(localStorage.getItem("longitude"));
 //console.log(longitude);
   map = new google.maps.Map(document.getElementById('map'), {
@@ -374,6 +398,10 @@ var pyrmont = new google.maps.LatLng(latitude,longitude);
             console.log(place.geometry.location.lng());
             longitude=place.geometry.location.lng();
             latitude=place.geometry.location.lat();
+            if(document.querySelector("#myInput").value !== " ")
+{
+  console.log("happy");
+}
         });
 
 
@@ -406,6 +434,10 @@ function callback(results, status,pagination) {
   }
 }
 function createMarker(place) {
+  if(place == 0)
+  {
+    console.log('yes');
+  }
   var photos = place.photos;
   var i=0;
         var marker = new google.maps.Marker({
@@ -425,13 +457,14 @@ function createMarker(place) {
 console.log("first"+tab);
 if(tab == 1)
 {
+   document.querySelector(".search").style.display="none";
   document.querySelector(".searchByName").style.display="none";
    document.querySelector("#pac-container").style.display = "none";
    console.log(tab);
    document.getElementById("places").innerHTML+=  `<div class="first-place">
         <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
         <div class="inner-style">
-            <p class="foodway"> ${place.name} <br><small>${place.rating}</small></p>
+            <p class="foodway" style="max-width:150px;"> ${place.name} <br><small>${place.rating}</small></p>
             <div class="inner-style1">
                   <p style="min-width:40px;max-width:100px;"><i class="fas fa-map-marker-alt"></i>
                       ${place.vicinity}</p>
@@ -454,9 +487,9 @@ if(tab == 2)
 </div><div class="first-place">
         <div style = "background-image:url(${photos[i].getUrl()});" id="first-place-img"></div>
         <div class="inner-style">
-            <p class="foodway"><small>${place.rating}</small></p>
+            <p class="foodway" style="max-width:150px;"><small>${place.rating}</small></p>
             <div class="inner-style1">
-                  <p style="min-width:40px;max-width:50px;><i class="fas fa-map-marker-alt"></i>
+                  <p style="min-width:40px;max-width:80px;><i class="fas fa-map-marker-alt"></i>
                       ${place.vicinity}</p>
                    </div>
           
@@ -468,6 +501,7 @@ if(tab == 2)
 }
 
 if(tab == 3){
+ document.querySelector(".search").style.display="none";
 document.querySelector(".searchByName").style.display="none";
   document.querySelector("#pac-container").style.display = "none";
   console.log(tab);
@@ -480,15 +514,23 @@ document.querySelector(".searchByName").style.display="none";
       document.querySelector("header").style.display="none";
  var myLatLng = {lat: place.geometry.location.lat(), lng:place.geometry.location.lng()};
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 20,
-          center: myLatLng
+        // var map = new google.maps.Map(document.getElementById('map'), {
+        //   zoom: 20,
+        //   center: myLatLng
+        // });
+   var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
         });
 
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
+        // var marker = new google.maps.Marker({
+        //   position: myLatLng,
+        //   map: map,
+        //   title: 'Hello World!'
+        // });
+         google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
         });
   
 }
@@ -500,7 +542,7 @@ if (tab == 4)
   console.log(tab);
    document.querySelector("#pac-container").style.padding = "0px";
     document.querySelector("#pac-container").style.backgroundColor = "white-space";
- document.getElementById("map").style.display = "block";
+ document.getElementById("map").style.display = "none";
    document.querySelector("#pac-input").style.display = "none";
 
   document.querySelector(".search").style.display="block";
@@ -528,7 +570,7 @@ if(tab == 9)
         <div class="inner-style">
             <p class="foodway"> ${place.name} <br><small>${place.rating}</small></p>
             <div class="inner-style1">
-                  <p style="min-width:40px;max-width:100px;"><i class="fas fa-map-marker-alt"></i>
+                  <p style="min-width:40px;max-width:80px;"><i class="fas fa-map-marker-alt"></i>
                       ${place.vicinity}</p>
                   
             </div>
